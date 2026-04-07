@@ -1,0 +1,7 @@
+com/example/webapp/validation/ContactInquiryValidatorTest.class
+com/example/webapp/service/ConsultingServiceLog4jTest.class
+com/example/webapp/logging/Log4jBootstrapTest.class
+com/example/webapp/testsupport/Log4jTestSupport.class
+com/example/webapp/service/ConsultingServiceTest.class
+com/example/webapp/catalog/CourseCatalogTest.class
+com/example/webapp/testsupport/CapturingAppender.class

@@ -10,9 +10,9 @@ class CourseCatalogTest {
     void upcomingCourseTitles_containsExpectedEntriesInOrder() {
         assertThat(CourseCatalog.upcomingCourseTitles())
                 .containsExactly(
-                        "Leadership Development - Jan 2025",
-                        "Advanced Python Programming - Feb 2025",
-                        "Effective Communication Skills - Mar 2025");
+                        "DevOps/SRE - Coming Soon",
+                        "Advanced Kubernetes Administrator (CKA/CKAD) - Coming Soon",
+                        "Certified Kubernetes Security Specialist (CKS) - Coming Soon");
     }
 
     @Test

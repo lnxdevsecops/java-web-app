@@ -27,7 +27,7 @@ class ConsultingServiceTest {
     @Test
     void getUpcomingCourseTitles_delegatesToCatalog() {
         assertThat(service.getUpcomingCourseTitles()).hasSize(3);
-        assertThat(service.getUpcomingCourseTitles().get(0)).contains("Leadership");
+        assertThat(service.getUpcomingCourseTitles().get(0)).contains("DevOps");
     }
 
     @Test

@@ -45,9 +45,9 @@
         <div class="container">
             <h2>Upcoming Courses</h2>
             <ul>
-                <li>Leadership Development - Jan 2025</li>
-                <li>Advanced Python Programming - Feb 2025</li>
-                <li>Effective Communication Skills - Mar 2025</li>
+                <li>DevOps/SRE - Coming Soon</li>
+                <li>Advanced Kubernetes Administrator (CKA/CKAD) - Coming Soon</li>
+                <li>Certified Kubernetes Security Specialist (CKS) - Coming Soon</li>
             </ul>
         </div>
     </section>
