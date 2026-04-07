@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  
+
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
@@ -10,32 +10,106 @@
   <name>java-web-app</name>
   <url>http://maven.apache.org</url>
 
+  <description>Maven Web Project for Java Web Application</description>
+
+  <organization>
+		<name>Ganga Technologies</name>
+		<url>http://gangatechnologies.com/</url>
+	</organization>
+
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>11</maven.compiler.release>
+    <junit.version>5.10.2</junit.version>
+    <log4j.version>2.23.1</log4j.version>
+    <assertj.version>3.25.3</assertj.version>
+		<sonar.host.url>http://172.31.33.143:9000/</sonar.host.url>
+		<sonar.login>admin</sonar.login>
+		<sonar.password>passw0rd</sonar.password> 
+  </properties>
+
   <dependencies>
-    <!-- JUnit for testing -->
+    <!-- Log4j 2 API (compile against API; core provides implementation) -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version> <!-- Updated to a newer version -->
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+
+    <!-- JUnit 5 -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+	<distributionManagement>
+	
+	    <repository>
+	      <id>nexus</id>
+	      <name>Mithun Technologies Releases Nexus Repository</name>
+	      <url>http://172.31.42.154:9980/mithuntechnologies/repository/canarabank-snapshot/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Mithun Technologies Snapshot Nexus Repository </name>
+	      <url>http://172.31.42.154:9980/mithuntechnologies/repository/canarabank-release/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
 
   <build>
     <finalName>java-web-app</finalName>
 
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <release>${maven.compiler.release}</release>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <useModulePath>false</useModulePath>
+          <systemPropertyVariables>
+            <log4j.configurationFile>classpath:log4j2-test.xml</log4j.configurationFile>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+
       <!-- WAR Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>3.3.2</version> <!-- Updated version -->
+        <version>3.3.2</version>
       </plugin>
 
       <!-- Dependency Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.5.0</version> <!-- Updated version -->
+        <version>3.5.0</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -47,7 +121,7 @@
                 <artifactItem>
                   <groupId>com.github.jsimone</groupId>
                   <artifactId>webapp-runner</artifactId>
-                  <version>8.5.20.0</version> <!-- Updated to a newer version -->
+                  <version>8.5.20.0</version>
                   <destFileName>webapp-runner.jar</destFileName>
                 </artifactItem>
               </artifactItems>
@@ -58,5 +132,3 @@
     </plugins>
   </build>
 </project>
-
-
