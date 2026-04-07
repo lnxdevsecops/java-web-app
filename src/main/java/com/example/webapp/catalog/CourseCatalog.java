@@ -9,9 +9,9 @@ import java.util.List;
 public final class CourseCatalog {
 
     private static final List<String> UPCOMING = List.of(
-            "Leadership Development - Jan 2025",
-            "Advanced Python Programming - Feb 2025",
-            "Effective Communication Skills - Mar 2025");
+            "DevOps/SRE - Coming Soon",
+            "Advanced Kubernetes (CKA/CKAD) - Coming Soon",
+            "Cerfified Kubernetes Security Specialist (CKS) - Coming Soon");
 
     private CourseCatalog() {
     }
