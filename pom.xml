@@ -24,6 +24,7 @@
     <junit.version>5.10.2</junit.version>
     <log4j.version>2.23.1</log4j.version>
     <assertj.version>3.25.3</assertj.version>
+    <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 		<sonar.host.url>http://20.244.6.85:9000/</sonar.host.url>
 		<sonar.login>squ_8d2fb9aecaf92e3641fb8b7424a05ca9c987ef56</sonar.login>
 		<!-- <sonar.password>passw0rd</sonar.password>  -->
@@ -118,6 +119,28 @@
         <artifactId>sonar-scanner-maven-plugin</artifactId>
         <version>4.0.0.4121</version>
       </plugin>
+
+      <!-- Jacoco Maven Plugin -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.10</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
 
       <!-- Dependency Plugin -->
       <plugin>
