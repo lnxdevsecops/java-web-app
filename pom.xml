@@ -24,9 +24,9 @@
     <junit.version>5.10.2</junit.version>
     <log4j.version>2.23.1</log4j.version>
     <assertj.version>3.25.3</assertj.version>
-		<sonar.host.url>http://172.31.33.143:9000/</sonar.host.url>
-		<sonar.login>admin</sonar.login>
-		<sonar.password>passw0rd</sonar.password> 
+		<sonar.host.url>http://20.244.6.85:9000/</sonar.host.url>
+		<sonar.login>squ_8d2fb9aecaf92e3641fb8b7424a05ca9c987ef56</sonar.login>
+		<!-- <sonar.password>passw0rd</sonar.password>  -->
   </properties>
 
   <dependencies>
@@ -103,6 +103,20 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.2</version>
+      </plugin>
+
+      <!-- Sonar Maven Plugin -->
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>4.0.0.4121</version>
+      </plugin>
+
+      <!-- Sonar Scanner Plugin -->
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-scanner-maven-plugin</artifactId>
+        <version>4.0.0.4121</version>
       </plugin>
 
       <!-- Dependency Plugin -->
