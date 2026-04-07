@@ -10,7 +10,7 @@ public final class CourseCatalog {
 
     private static final List<String> UPCOMING = List.of(
             "DevOps/SRE - Coming Soon",
-            "Advanced Kubernetes (CKA/CKAD) - Coming Soon",
+            "Advanced Kubernetes Administrator (CKA/CKAD) - Coming Soon",
             "Cerfified Kubernetes Security Specialist (CKS) - Coming Soon");
 
     private CourseCatalog() {
