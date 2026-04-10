@@ -58,9 +58,9 @@
     </dependency>
   </dependencies>
 
-	<distributionManagement>
+	<!-- <distributionManagement>
 	
-	    <!-- <repository>
+	    <repository>
 	      <id>nexus</id>
 	      <name>Ganga Technologies Releases Nexus Repository</name>
 	      <url>http://40.81.244.156:8081/repository/java-web-app-release/</url>
